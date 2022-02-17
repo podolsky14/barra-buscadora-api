@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "../index.css"
 
-
 export default function BuscadorApi() {
 const[usuario, setUsuario] = useState([])
 const[busqueda, setBusqueda] = useState([])
@@ -33,24 +32,19 @@ useEffect(() => {
   const filtrar=(terminoBusqueda)=>{
     var resultadosBusqueda= tablaUsuarios.filter((elemento)=>{
       if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-      || elemento.company.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       ){
         return elemento;
       }
     });
     setUsuario(resultadosBusqueda);
   }
-
   
-
-
   return (
     <>
 <form>
 <input value={busqueda} onChange={onChange}/>
 <button>BUSCAR</button>
 </form>
-
 
        <table className="table border border-primary">
              <thead>
@@ -74,16 +68,7 @@ useEffect(() => {
                ))}
              </tbody>
     
-           </table>
-    
-     
-     
-     
-     
-     
+           </table>   
      </>
-
-
-
   )
 }
